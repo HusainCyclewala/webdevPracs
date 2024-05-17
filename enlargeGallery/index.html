@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlarge Gallery</title>
+
+    <style>
+        img {
+            width: 200px;
+            transition: width 0.3s ease-in-out;
+            /* transform: scale(); */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1> GALLERY</h1>
+    </div>
+    <div>
+        <img id="img" src="image1.jpg" alt="not available">
+    </div>
+
+    <script>
+
+        const image = document.getElementById('img');
+        const img = document.getElementById('img');
+
+        img.addEventListener('click',() => {
+            if(img.style.width ==='200px'){
+                img.style.width= '500px';
+            }else{
+                img.style.width ='200px';
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

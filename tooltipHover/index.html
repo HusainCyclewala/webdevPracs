@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tooltip</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        span{
+            display: none;
+        }
+        .tooltip{
+            text-decoration: none;
+            font-size: larger;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: crosshair;
+        }
+        .tooltip:hover span{
+            display: block;
+            position:absolute;
+            top: 40px;
+            left: 40px;
+            border: 2px solid grey;
+            border-radius: 5px;
+            background-color: grey;
+            color: black;
+            opacity: 0.5;
+            padding: 3px;
+            /* white-space: pre; */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- <button class="tooltip">Hover me
+        <span class="text">This is the tooltip text</span>
+    </button> -->
+    <a class="tooltip" href="https://chatgpt.com/c/5c9210ba-b6ed-47bf-9065-f7d9e293d5e5">
+        Hover me
+        <span>
+            you have hovered me...
+        </span>
+    </a>
+
+</body>
+
+</html>

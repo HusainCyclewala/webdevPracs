@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Carousel</title>
+<style>
+    .carousel-container {
+        position: relative;
+        width: 500px; /* Adjust width as needed */
+        overflow: hidden;
+    }
+    .carousel-slides {
+        display: flex;
+        transition: transform 1s ease;
+    }
+    .carousel-slide {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<div class="carousel-container">
+
+    <div class="carousel-slides">
+
+        <div class="carousel-slide">
+            <img width="300px" src="image1.jpg" alt="Slide 1">
+        </div>
+        <div class="carousel-slide">
+            <img width="300px" src="image2.jpg" alt="Slide 2">
+        </div>
+        <div class="carousel-slide">
+            <img width="300px" src="image3.jpg" alt="Slide 3">
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+   
+        const container = document.querySelector('.carousel-container');
+        const innerSlides = document.querySelectorAll('.carousel-slide');
+        const outerSlides = document.querySelector('.carousel-slides');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % innerSlides.length;
+            updateSlide();
+        }
+
+        function updateSlide() {
+            const offset = -currentIndex * 100 + '%';
+            outerSlides.style.transform = `translateX(${offset})`;
+        }
+
+        setInterval(nextSlide, 2000); // Change slide every 3 seconds
+   
+</script>
+
+</body>
+</html>

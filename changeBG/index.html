@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            transition: background-color 0.3s ease;
+        }
+        button{
+            transition: padding 0.8s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="changeColorBtn">Change Background Color</button>
+
+    <script>
+        var button = document.getElementById('changeColorBtn');
+
+        var changeBackgroundColor=()=> {
+
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+
+            document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+            button.style.padding = "100px"
+        }
+
+        // Attach event listener to the button
+        button.addEventListener('click', changeBackgroundColor);
+
+    </script>
+
+</body>
+
+</html>

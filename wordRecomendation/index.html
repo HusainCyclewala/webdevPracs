@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .recommendation {
+            color: #007BFF;
+            font-size: 14px;
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="input-container">
+        <label for="inputBox">Enter text:</label>
+        <input type="text" id="inputBox" />
+        <div class="recommendation" id="recommendationBox"></div>
+    </div>
+
+    <script>
+
+        const inputBox = document.getElementById('inputBox');
+        const recommendationBox = document.getElementById('recommendationBox');
+        let previousWord = '';
+        console.log(inputBox)
+        console.log(recommendationBox)
+
+        inputBox.addEventListener('input', function () {
+            const currentText = inputBox.value.trim();
+
+            if (previousWord && currentText !== previousWord) {
+                recommendationBox.textContent = previousWord;
+                recommendationBox.style.display = 'block';
+            } else {
+                recommendationBox.style.display = 'none';
+            }
+
+            // Update previousWord only if space is added or input is empty
+            if (currentText.endsWith(' ') || currentText === '') {
+                previousWord = currentText.split(' ').filter(Boolean).pop() || '';
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

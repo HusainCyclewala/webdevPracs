@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Alert Example</title>
+    <style>
+        body {
+            height: 2000px;
+            /* Ensures there is enough content to scroll */
+            font-family: Arial, sans-serif;
+            border: 2px solid;
+            margin: 5px;
+            /* background-color: grey; */
+        }
+    </style>
+    <style>
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        img {
+            animation: fade 3s infinite alternate;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode;   */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Scroll Down to See the Alert</h1>
+    <img width="500px" src="image2.jpg" alt="">
+
+    <script>
+
+        const scrollLimit = 500; // Set the pixel threshold for the alert
+        let alertShown = 0; // Ensure the alert is shown only once
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollLimit && alertShown == 0) {
+                alert('You have scrolled beyond the threshold!');
+                alertShown = 1; // Prevent further alerts
+            }
+        });
+
+    </script>
+</body>
+
+</html>
